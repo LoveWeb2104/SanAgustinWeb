@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Colegio San Agustin</title>
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --color-primary: #6ca0dc; /* azul suave */
+      --color-secondary: #a3d2ca; /* verde agua */
+      --color-accent: #f4d35e; /* amarillo suave */
+      --color-bg: #f9f9f9;
+      --color-text: #333333;
+      --color-footer-bg: #2c3e50;
+      --color-footer-text: #ecf0f1;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: var(--color-primary);
+    }
+    .navbar-brand,
+    .navbar-nav .nav-link {
+      color: white !important;
+      font-weight: 600;
+    }
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:focus {
+      color: var(--color-accent) !important;
+    }
+
+    /* Hero Section */
+    #inicio {
+      background: linear-gradient(
+          rgba(220, 190, 108, 0.85),
+          rgba(115, 158, 207, 0.85)
+        ),
+        url('https://scontent.fclo1-3.fna.fbcdn.net/v/t39.30808-6/240579981_3040803082829932_6997610713154247631_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=XA-1fq_WbkAQ7kNvwFHT7-k&_nc_oc=Adllxm9O85ObL9c9KxNTECgwI47Zg7wwGlDQYO3mv_A8zilFsBtDqn_ysuGzXniuIho&_nc_zt=23&_nc_ht=scontent.fclo1-3.fna&_nc_gid=517j-ikdDBytAWLzYUx0eA&oh=00_AfaNeG6MDz4njZspdHRGv99b888ABWD9zbESLDj-Gq1lPQ&oe=68C13981')
+          center center/cover no-repeat;
+      color: white;
+      padding: 6rem 1rem 4rem;
+      text-align: center;
+    }
+    #inicio h1 {
+      font-weight: 700;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    }
+    #inicio p.lead {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    }
+
+    /* Section Titles */
+    h2.section-title {
+      color: var(--color-primary);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* Cards for Academics */
+    .academia-card {
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+      transition: transform 0.3s ease;
+      background-color: white;
+    }
+    .academia-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+    }
+    .academia-card img {
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      height: 180px;
+      object-fit: cover;
+    }
+    .academia-card-body {
+      padding: 1.25rem;
+    }
+    .academia-card-body h5 {
+      color: var(--color-primary);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Admisiones Form */
+    #form-admision {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Noticias / Eventos */
+    .news-item {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+      padding: 1rem 1.5rem;
+      margin-bottom: 1.5rem;
+      transition: box-shadow 0.3s ease;
+    }
+    .news-item:hover {
+      box-shadow: 0 6px 20px rgb(0 0 0 / 0.15);
+    }
+    .news-item h5 {
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+    .news-date {
+      font-size: 0.85rem;
+      color: #777;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--color-footer-bg);
+      color: var(--color-footer-text);
+      padding: 2rem 1rem;
+    }
+    footer a {
+      color: var(--color-footer-text);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    footer a:hover,
+    footer a:focus {
+      color: var(--color-accent);
+      text-decoration: underline;
+    }
+    .social-icons a {
+      font-size: 1.5rem;
+      margin-right: 1rem;
+      display: inline-block;
+      transition: color 0.3s ease;
+    }
+    .social-icons a:hover {
+      color: var(--color-accent);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 576px) {
+      #inicio h1 {
+        font-size: 2rem;
+      }
+      #inicio p.lead {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top shadow">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#inicio">
+      <img src="https://scontent.fclo1-4.fna.fbcdn.net/v/t39.30808-6/338953214_1417713859057305_1417938052941786812_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=QQ7XvbvFbGoQ7kNvwE35nVH&_nc_oc=AdlHgyvVlHjnRf7zXo0VHT9TJXIeha0YuUwi3csVvzJvWS-GA4u46C5nGcpRbptVvdY&_nc_zt=23&_nc_ht=scontent.fclo1-4.fna&_nc_gid=uo8CJ63Bo31tiLYKmYk36Q&oh=00_AfaNe4lxXLq7CpT2khfyBglDKijtkmqI_jiHnVXtifaOIA&oe=68C11706" alt="Logo" class="me-2" height="40">
+      Colegio San Agustin
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+      data-bs-target="#navbarNav" aria-controls="navbarNav" 
+      aria-expanded="false" aria-label="Alternar navegación">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto fw-semibold">
+        <li class="nav-item">
+          <a class="nav-link" href="#inicio">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#academica">Académica</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#admisiones">Admisiones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#noticias">Noticias</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contacto">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- Inicio -->
+  <section id="inicio" class="d-flex flex-column justify-content-center align-items-center">
+    <h1>Bienvenidos al Colegio San Agustin</h1>
+    <p class="lead px-3 px-md-0">
+      VIRTUD Y CIENCIA.
+    </p>
+    <div class="container mt-4">
+      <div class="row text-center text-md-start">
+        <div class="col-md-4 mb-4">
+          <h3 class="text-white fw-bold">Misión</h3>
+          <p>
+            El colegio San Agustin busca contribuir con el desarrollo personal y 
+            social de sus estudiantes, formandolos en valores, convirtiendolos en 
+            jóvenes respetuosos, autonomos, responsables y competentes ante las 
+            situaciones que les ofrece el medio, capaces de asumir nuevos retos en 
+            su vida academica y social.
+          </p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h3 class="text-white fw-bold">Visión</h3>
+          <p>
+            El Colegio San Agustin para el año 2030 sera una institucion educativa 
+            que demuestra liderazgo en la formacion de personas con principios y valores
+            propios de la pedagogia agustiniana, reconocido enla ciudad de Santiago de cali 
+            por su excelencia academica y su formacion humana, comprometido con la sociedad, 
+            el fortalecimiento del talento humano y el mejoramiento continuo de sus procesos.
+          </p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h3 class="text-white fw-bold">Valores</h3>
+          <ul class="list-unstyled">
+            <li>• Respeto</li>
+            <li>• Responsabilidad</li>
+            <li>• Solidaridad</li>
+            <li>• Honestidad</li>
+            <li>• Creatividad</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Académica -->
+  <section id="academica" class="py-5">
+    <div class="container">
+      <h2 class="section-title mb-5">Niveles Académicos</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="academia-card h-100">
+            <img
+              src="https://assets.oviahealth.com/wp-content/uploads/2022/12/ArticleHeader_So-your-kid-is-starting-kindergarten.jpg"
+              alt="Preescolar"
+              loading="lazy"
+            />
+            <div class="academia-card-body">
+              <h5>Preescolar</h5>
+              <p>
+                Un espacio seguro y estimulante donde los niños desarrollan habilidades
+                básicas, creatividad y socialización a través del juego y la exploración.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="academia-card h-100">
+            <img
+              src="https://www.coldelvalle.edu.mx/wp-content/uploads/2021/11/7-Que-se-aprende-en-la-escuela-primaria-min-min.jpg"
+              alt="Básica Primaria"
+              loading="lazy"
+            />
+            <div class="academia-card-body">
+              <h5>Básica Primaria</h5>
+              <p>
+                Formación integral en áreas fundamentales como matemáticas, lenguaje,
+                ciencias y valores, fomentando el pensamiento crítico y la autonomía.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="academia-card h-100">
+            <img
+              src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80"
+              alt="Secundaria hasta Noveno"
+              loading="lazy"
+            />
+            <div class="academia-card-body">
+              <h5>Secundaria hasta Noveno</h5>
+              <p>
+                Preparación académica avanzada con énfasis en ciencias, humanidades y
+                tecnología, promoviendo liderazgo y responsabilidad social.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Admisiones -->
+  <section id="admisiones" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title mb-4">Admisiones</h2>
+      <div class="row">
+        <div class="col-lg-6 mb-4">
+          <h4>Requisitos</h4>
+          <ul>
+            <li>Formulario de inscripción completo.</li>
+            <li>Fotocopia del documento de identidad del estudiante.</li>
+            <li>Certificado de estudios anteriores (si aplica).</li>
+            <li>Fotografía reciente tamaño carnet.</li>
+            <li>Pago de matrícula y derechos administrativos.</li>
+            <li>Entrevista con el equipo académico (previa cita).</li>
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <h4>Formulario de Contacto</h4>
+          <form id="form-admision" novalidate>
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre completo</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nombre"
+                name="nombre"
+                required
+                placeholder="Nombre del estudiante o representante"
+              />
+              <div class="invalid-feedback">Por favor ingrese su nombre.</div>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo electrónico</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                required
+                placeholder="correo@ejemplo.com"
+              />
+              <div class="invalid-feedback">Por favor ingrese un correo válido.</div>
+            </div>
+            <div class="mb-3">
+              <label for="telefono" class="form-label">Teléfono</label>
+              <input
+                type="tel"
+                class="form-control"
+                id="telefono"
+                name="telefono"
+                required
+                placeholder="+57 300 000 0000"
+                pattern="^\+?\d{7,15}$"
+              />
+              <div class="invalid-feedback">
+                Por favor ingrese un número de teléfono válido.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="mensaje" class="form-label">Mensaje</label>
+              <textarea
+                class="form-control"
+                id="mensaje"
+                name="mensaje"
+                rows="3"
+                placeholder="Escriba aquí su consulta o comentario"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">
+              Enviar
+            </button>
+            <div id="form-feedback" class="mt-3" role="alert" style="display:none;"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Noticias / Eventos -->
+<section id="noticias" class="py-5">
+  <div class="container">
+    <h2 class="section-title mb-5">Noticias y Eventos</h2>
+    <div class="row g-4">
+      <!-- Noticia 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="news-item h-100">
+          <img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=600&q=80" 
+               class="img-fluid rounded mb-3" alt="Noticia 1">
+          <h5>Nuevo Laboratorio de Ciencias</h5>
+          <p class="news-date">📅 02 Septiembre 2025</p>
+          <p>
+            Inauguramos nuestro moderno laboratorio de ciencias para fomentar la
+            investigación y la práctica en biología, química y física.
+          </p>
+        </div>
+      </div>
+
+      <!-- Noticia 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="news-item h-100">
+          <img src="https://quizizz.com/media/resource/gs/quizizz-media/quizzes/daa723d7-c732-40a4-8277-b4cab064a5b7?w=200&h=200" 
+               class="img-fluid rounded mb-3" alt="Noticia 2">
+          <h5>Olimpiadas Matemáticas</h5>
+          <p class="news-date">📅 28 Agosto 2025</p>
+          <p>
+            Nuestros estudiantes participaron en las Olimpiadas Matemáticas
+            regionales, obteniendo excelentes resultados en distintas categorías.
+          </p>
+        </div>
+      </div>
+
+      <!-- Evento 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="news-item h-100">
+          <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=600&q=80" 
+               class="img-fluid rounded mb-3" alt="Evento 1">
+          <h5>Día de la Familia</h5>
+          <p class="news-date">📅 15 Septiembre 2025</p>
+          <p>
+            Un espacio de integración con actividades culturales, juegos y
+            presentaciones artísticas para toda la comunidad educativa.
+          </p>
+        </div>
+      </div>
+
+      <!-- Evento 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="news-item h-100">
+          <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=600&q=80" 
+               class="img-fluid rounded mb-3" alt="Evento 2">
+          <h5>Feria de la Ciencia</h5>
+          <p class="news-date">📅 30 Septiembre 2025</p>
+          <p>
+            Los estudiantes expondrán proyectos innovadores en tecnología, medio
+            ambiente y ciencias aplicadas.
+          </p>
+        </div>
+      </div>
+
+      <!-- Noticia 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="news-item h-100">
+          <img src="https://ichef.bbci.co.uk/ace/ws/800/cpsprodpb/72B2/production/_112826392_gettyimages-480952865.jpg.webp" 
+               class="img-fluid rounded mb-3" alt="Noticia 3">
+          <h5>Convenio con Universidad Local</h5>
+          <p class="news-date">📅 20 Agosto 2025</p>
+          <p>
+            El colegio firmó un convenio académico con la Universidad del Valle
+            para apoyar procesos de investigación y preparación universitaria.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sección Galería -->
+<section id="galeria" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title mb-4 text-center">Galería</h2>
+    <div class="row g-4">
+      
+      <!-- Imagen 1 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card shadow-sm rounded-3">
+          <img src="https://scontent.fclo1-4.fna.fbcdn.net/v/t39.30808-6/338953214_1417713859057305_1417938052941786812_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=QQ7XvbvFbGoQ7kNvwE35nVH&_nc_oc=AdlHgyvVlHjnRf7zXo0VHT9TJXIeha0YuUwi3csVvzJvWS-GA4u46C5nGcpRbptVvdY&_nc_zt=23&_nc_ht=scontent.fclo1-4.fna&_nc_gid=uo8CJ63Bo31tiLYKmYk36Q&oh=00_AfaNe4lxXLq7CpT2khfyBglDKijtkmqI_jiHnVXtifaOIA&oe=68C11706" class="card-img-top" alt="Evento 1">
+        </div>
+      </div>
+      
+      <!-- Imagen 2 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card shadow-sm rounded-3">
+          <img src="https://scontent.fclo1-4.fna.fbcdn.net/v/t39.30808-6/338953214_1417713859057305_1417938052941786812_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=QQ7XvbvFbGoQ7kNvwE35nVH&_nc_oc=AdlHgyvVlHjnRf7zXo0VHT9TJXIeha0YuUwi3csVvzJvWS-GA4u46C5nGcpRbptVvdY&_nc_zt=23&_nc_ht=scontent.fclo1-4.fna&_nc_gid=uo8CJ63Bo31tiLYKmYk36Q&oh=00_AfaNe4lxXLq7CpT2khfyBglDKijtkmqI_jiHnVXtifaOIA&oe=68C11706" class="card-img-top" alt="Evento 2">
+        </div>
+      </div>
+
+      <!-- Video de YouTube -->
+      <div class="col-md-4 col-sm-6">
+        <div class="ratio ratio-16x9 shadow-sm rounded-3">
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID" 
+                  title="Video de YouTube" 
+                  allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Otra Imagen -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card shadow-sm rounded-3">
+          <img src="https://scontent.fclo1-4.fna.fbcdn.net/v/t39.30808-6/338953214_1417713859057305_1417938052941786812_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=QQ7XvbvFbGoQ7kNvwE35nVH&_nc_oc=AdlHgyvVlHjnRf7zXo0VHT9TJXIeha0YuUwi3csVvzJvWS-GA4u46C5nGcpRbptVvdY&_nc_zt=23&_nc_ht=scontent.fclo1-4.fna&_nc_gid=uo8CJ63Bo31tiLYKmYk36Q&oh=00_AfaNe4lxXLq7CpT2khfyBglDKijtkmqI_jiHnVXtifaOIA&oe=68C11706" class="card-img-top" alt="Evento 3">
+        </div>
+      </div>
+
+      <!-- Otro Video -->
+      <div class="col-md-4 col-sm-6">
+        <div class="ratio ratio-16x9 shadow-sm rounded-3">
+          <iframe src="https://www.youtube.com/embed/OTRO_VIDEO_ID" 
+                  title="Video de YouTube" 
+                  allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Sección Contacto -->
+<section id="contacto" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title mb-4 text-center">Contacto</h2>
+    <div class="row g-4">
+      
+      <!-- Información de contacto -->
+      <div class="col-md-6">
+        <h5>Dirección</h5>
+        <p>Cra 1K norte #80-77, barrio Comfenalco, Santiago de Cali, Valle del Cauca</p>
+        <p>Dg 7 #5N - 395, barrio Paso del Comercio, Santiago de Cali, Valle del Cauca</p>
+        
+        <h5>Teléfono</h5>
+        <p><a href="tel:+576024887052">(602) 4887052</a></p>
+        
+        <h5>Correo electrónico</h5>
+        <p><a href="mailto:colegiosanagustincali@gmail.com">colegiosanagustincali@gmail.com</a></p>
+        
+        <h5>Redes Sociales</h5>
+        <div class="social-icons d-flex gap-3">
+          <a href="https://www.facebook.com/julieta.jaramillo.501" target="_blank" aria-label="Facebook" rel="noopener" class="text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+              <path d="M8.94 6.5H7.5v-1a.5.5 0 0 1 .5-.5h.94V3.5H7.5A2.5 2.5 0 0 0 5 6v1.5H3.5v2H5V14h2.5v-4.5h1.44l.56-2H7.5V6.5h1.44z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Mapa de Google -->
+      <div class="col-md-6">
+        <h5>Ubicación</h5>
+        <div class="ratio ratio-4x3 shadow rounded">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.6143527577293!2d-76.532!3d3.4516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a6f3b08b29f7%3A0xa257c39f07b6e6e2!2sSantiago%20de%20Cali%2C%20Valle%20del%20Cauca!5e0!3m2!1ses-419!2sco!4v1693958800000!5m2!1ses-419!2sco" 
+            width="600" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-light text-center py-3 mt-5">
+  <div class="container">
+    <p class="mb-0">© 2025 Colegio San Agustín. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+
