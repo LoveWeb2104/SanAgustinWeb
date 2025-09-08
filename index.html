@@ -173,6 +173,25 @@
     }
   </style>
 </head>
+<script>
+  document.getElementById("form-admision").addEventListener("submit", function (e) {
+    e.preventDefault(); // Evita el envío normal
+
+    // Simulamos que el formulario se envió correctamente
+    let feedback = document.getElementById("form-feedback");
+    feedback.style.display = "block";
+    feedback.className = "alert alert-success";
+    feedback.textContent = "✅ Tu mensaje ha sido enviado correctamente. ¡Gracias por contactarnos!";
+
+    // Reiniciar formulario
+    this.reset();
+
+    // Ocultar el mensaje después de 5 segundos
+    setTimeout(() => {
+      feedback.style.display = "none";
+    }, 5000);
+  });
+</script>
 <body>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg sticky-top shadow">
@@ -325,7 +344,12 @@
         </div>
         <div class="col-lg-6">
           <h4>Formulario de Contacto</h4>
-          <form id="form-admision" novalidate>
+            <form 
+             id="form-admision" 
+             action="https://formsubmit.co/loremndz.d@gmail.com" 
+             method="POST" 
+             novalidate
+            >
             <div class="mb-3">
               <label for="nombre" class="form-label">Nombre completo</label>
               <input
